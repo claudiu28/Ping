@@ -1,0 +1,1 @@
+create database ping_social_db;

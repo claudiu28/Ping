@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.7'
+}
+apply plugin: 'io.spring.dependency-management'
+group = 'main'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '21'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '3.5.3'
+
+    implementation project(":Models")
+    implementation project(":Data")
+    implementation project(":Service")
+    implementation project(":Config")
+    implementation project(":Controller")
+}
+
+test {
+    useJUnitPlatform()
+}

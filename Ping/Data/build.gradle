@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'main'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '3.5.3'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.7'
+
+    implementation project(":Models")
+}
+
+test {
+    useJUnitPlatform()
+}

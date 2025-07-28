@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'main'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
+    annotationProcessor ('org.projectlombok:lombok:1.18.38')
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.19.0'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '3.5.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-websocket', version: '3.5.3'
+    implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '4.0.0-M3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '3.5.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '3.5.3'
+
+    implementation 'com.vonage:client:[6.1.0,7.0.0)'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.6'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.12.6'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.12.6'
+    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
+
+    implementation project(":Models")
+    implementation project(":Data")
+    implementation project(":Service")
+}
+
+test {
+    useJUnitPlatform()
+}
