@@ -1,3 +1,5 @@
+---
+
 # 📱Ping
 Ping is a social media application that offers real-time messaging (both private and group conversations) with live updates via WebSocket, comprehensive friend management (including requests, acceptances, and suggestions), the ability to create and view posts with text, images, comments, and likes, a personalized feed based on friends' activity, and real-time notifications for important interactions such as new posts, comments, or friend requests.
 
